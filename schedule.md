@@ -474,6 +474,9 @@ summary( m1 )
 # Which of these three things should I spend
 # time on to improve my likelihood of admissions? 
 
+# use standard deviations to represent 
+# a meaningful intervention or change
+      
 sd.lsat <- sd( dat$LSAT )
 sd.essay <- sd( dat$Essay )
 sd.gpa <- sd( dat$GPA )
@@ -483,9 +486,12 @@ b1 <- m1$coefficients[2]
 b2 <- m1$coefficients[3]
 b3 <- m1$coefficients[4]
 
-sd.lsat * b1     # gains from improvement in LSAT
+# Y = b0 + b1*LSAT + b2*Essay + b3*GPA  
+# where Y is probability of admissions
+  
+sd.lsat  * b1    # gains from improvement in LSAT
 sd.essay * b2    # gains from improvement in essay 
-sd.gpa * sd.gpa  # gains from improvement in gpa
+sd.gpa   * b3    # gains from improvement in gpa
 
 # predicted prob of success (admissions) for a specific individual:
 gpa <- 3.0
@@ -502,6 +508,10 @@ summary( m2 )
 p <- 1 / ( 1 + exp( - ( b0 + b1*x1 + b2*x2 ) ) )
 
 # predicted prob of success (admissions) for a specific individual:
+     
+# Y = b0 + b1*LSAT + b2*Essay + b3*GPA  
+# where Y is now a log-odds (not very useful by iteself)
+     
 b0 <- m2$coefficients[1]
 b1 <- m2$coefficients[2]
 b2 <- m2$coefficients[3]
@@ -512,7 +522,7 @@ lsat <- 145
 essay <- 90 
 
 # model reports log-odds
-y.hat <- b0 + b1*lsat + b2*essay + b3*gpa
+y.hat <- b0 + b1*LSAT + b2*Essay + b3*GPA
 
 # convert log-odds to probabilities
 1 / ( 1 + exp( - ( y.hat ) ) )
@@ -537,10 +547,12 @@ y.hat <- b0 + b1*lsat + b2*essay + b3*gpa
 gpa <- mean( dat$GPA )  
 essay <- mean( dat$Essay ) 
 
+# baseline of 140
 lsat <- 140
 y.hat <- b0 + b1*lsat + b2*essay + b3*gpa
 p.140 <- 1 / ( 1 + exp( - ( y.hat ) ) )
 
+# improvement to 150 all else constant
 lsat <- 150
 y.hat <- b0 + b1*lsat + b2*essay + b3*gpa
 p.150 <- 1 / ( 1 + exp( - ( y.hat ) ) )
