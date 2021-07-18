@@ -434,7 +434,6 @@ Note:                   *p<0.1; **p<0.05; ***p<0.01
 
 <a class="uk-button uk-button-default" style="width:130px" href="https://ds4ps.org/pe4ps-textbook/labs/logit-lab.html">LAB</a>
 
-<a class="uk-button uk-button-default" style="width:130px" href="https://asu.zoom.us/rec/share/xfMlBJHy_E5IZ7fGsnvxB5UzGKTreaa8hiAWqfIPnhtzDDh-1wytiZ5OYSgLp0WQ">VIDEO</a>
 
 [example script](examples/logistic-regression-example.R) 
 
@@ -598,7 +597,7 @@ p.180 - p.170
 <br><br>
 <a class="uk-button uk-button-default" style="width:130px" href="https://ds4ps.org/pe4ps-textbook/labs/matching-lab.html">LAB</a>
 <br><br>
-<a class="uk-button uk-button-default" style="width:130px" href="https://asu.zoom.us/rec/share/4MpkE7Xr2VhOZdbI4mOFR7caHY_6eaa8gSdKq_cFn0ecqyECXG2G3ve0yarS9z00?startTime=1588373097000">VIDEO</a>
+<a class="uk-button uk-button-default" target="_blank" style="width:130px" href="https://youtu.be/IYVyhFcFUOM">VIDEO</a>
 
 ---
 
